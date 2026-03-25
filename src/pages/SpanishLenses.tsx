@@ -77,6 +77,7 @@ export default function SpanishLenses() {
                 src="/images/eye1.jpg" 
                 alt="Wolf Vision Spain"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
@@ -103,6 +104,7 @@ export default function SpanishLenses() {
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-10 right-10 text-right translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -145,6 +147,7 @@ export default function SpanishLenses() {
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover opacity-70"
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <h4 className="text-gold font-serif text-2xl mb-4">{item.title}</h4>

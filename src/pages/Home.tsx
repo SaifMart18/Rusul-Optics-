@@ -22,6 +22,7 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop" 
             alt="Clinic Background" 
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
         </div>
 
