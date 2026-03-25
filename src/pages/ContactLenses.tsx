@@ -105,7 +105,6 @@ export default function ContactLenses() {
                   src={category.image} 
                   alt={category.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 
