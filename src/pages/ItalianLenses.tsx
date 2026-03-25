@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
 const italianGallery = [
-  { id: "1", image: "/images/italy1.jpg", title: "Desio - Italian Luxury" },
-  { id: "2", image: "/images/italy2.jpg", title: "Desio - Gray Elegance" },
-  { id: "3", image: "/images/italy3.jpg", title: "Desio - Emerald Green" },
-  { id: "4", image: "/images/italy4.jpg", title: "Desio - Amber Gold" },
+  { id: "1", image: "images/italy1.jpg", title: "Desio - Italian Luxury" },
+  { id: "2", image: "images/italy2.jpg", title: "Desio - Gray Elegance" },
+  { id: "3", image: "images/italy3.jpg", title: "Desio - Emerald Green" },
+  { id: "4", image: "images/italy4.jpg", title: "Desio - Amber Gold" },
   { id: "5", image: "/images/italy5.jpg", title: "Desio - Mystic Blue" }
 ];
 
