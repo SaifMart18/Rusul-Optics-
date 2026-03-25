@@ -88,7 +88,6 @@ export default function Services() {
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                   <div className="absolute top-6 right-6 w-12 h-12 bg-black/80 backdrop-blur-md border border-gold/30 rounded-full flex items-center justify-center text-gold">
@@ -189,7 +188,6 @@ export default function Services() {
                   src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=1000" 
                   alt="Contact Lenses" 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                 <div className="absolute bottom-8 right-8 left-8 text-right">
@@ -208,7 +206,6 @@ export default function Services() {
                   src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=400" 
                   alt="Lens Detail" 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </motion.div>
             </motion.div>
