@@ -12,7 +12,7 @@ export default function SEO({
   title = "بصريات المستقبل | Future Optics", 
   description = "بصريات المستقبل - وجهتكم الأولى لأرقى العدسات اللاصقة الطبية والتجميلية والماركات العالمية.",
   keywords = "عدسات لاصقة, بصريات, نظارات, عدسات طبية, عدسات تجميلية, Desio, Alcon, Wolf Vision",
-  image = "/images/logo.png",
+  image = "/images/eye1.jpg",
   url = "https://future-optics.run.app"
 }: SEOProps) {
   const siteTitle = "بصريات المستقبل";
