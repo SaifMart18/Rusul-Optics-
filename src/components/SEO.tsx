@@ -9,13 +9,13 @@ interface SEOProps {
 }
 
 export default function SEO({ 
-  title = "بصريات المستقبل | Future Optics", 
-  description = "بصريات المستقبل - وجهتكم الأولى لأرقى العدسات اللاصقة الطبية والتجميلية والماركات العالمية.",
-  keywords = "عدسات لاصقة, بصريات, نظارات, عدسات طبية, عدسات تجميلية, Desio, Alcon, Wolf Vision",
+  title = "Rusul Optics | عيادة بصريات فاخرة", 
+  description = "Rusul Optics - وجهتكم الأولى لأرقى العدسات اللاصقة الطبية والتجميلية والماركات العالمية في بغداد.",
+  keywords = "عدسات لاصقة, بصريات, نظارات, عدسات طبية, عدسات تجميلية, Desio, Alcon, Wolf Vision, Rusul Optics",
   image = "/images/eye1.jpg",
-  url = "https://future-optics.run.app"
+  url = "https://rusul-optics.run.app"
 }: SEOProps) {
-  const siteTitle = "بصريات المستقبل";
+  const siteTitle = "Rusul Optics";
   const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 
   return (

@@ -8,7 +8,7 @@ const hdLenses = [
   { id: "F2", color: "Ocean Blue", image: "/images/france2.jpg" },
   { id: "F3", color: "Forest Green", image: "/images/france3.jpg" },
   { id: "F4", color: "Deep Gray", image: "/images/france4.jpg" },
-  { id: "F5", color: "Amber Glow", image: "/images/france5.jpg" },
+  { id: "F5", color: "Amber Glow", image: "/images/france1.jpg" },
 ];
 
 export default function FrenchLenses() {
