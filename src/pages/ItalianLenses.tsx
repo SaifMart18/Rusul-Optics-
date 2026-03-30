@@ -78,6 +78,7 @@ export default function ItalianLenses() {
                 src="/images/italy1.jpg" 
                 alt="Desio Italian Lenses"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
@@ -104,6 +105,7 @@ export default function ItalianLenses() {
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-10 right-10 text-right translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
