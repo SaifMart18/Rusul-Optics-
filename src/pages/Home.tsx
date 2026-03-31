@@ -4,22 +4,17 @@ import { ChevronDown } from "lucide-react";
 import Logo from "../components/Logo";
 import Services from "./Services";
 import Contact from "./Contact";
-import SEO from "../components/SEO";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      <SEO 
-        title="الرئيسية" 
-        description="عيادة بصريات متكاملة - فحص وتقويم البصر، نظارات شمسية وطبية، وعدسات لاصقة طبية وتجميلية."
-      />
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         {/* Background Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070" 
             alt="Clinic Background" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
