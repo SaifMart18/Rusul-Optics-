@@ -62,9 +62,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "الرئيسية", id: "home" },
-    { name: "خدماتنا", id: "services" },
-    { name: "اتصل بنا", id: "contact" },
+    { name: "الرئيسية", id: "home", path: "/" },
+    { name: "خدماتنا", id: "services", path: "/services" },
+    { name: "العدسات اللاصقة", id: "contact-lenses", path: "/contact-lenses" },
+    { name: "اتصل بنا", id: "contact", path: "/contact" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -121,16 +122,17 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.id}
-              onClick={() => scrollToSection(link.id)}
+              to={link.path}
+              onClick={() => link.id === "home" ? scrollToSection("home") : null}
               className={`text-sm tracking-widest uppercase transition-colors duration-300 relative group ${
-                activeSection === link.id ? "text-gold" : "text-stone-400 hover:text-gold"
+                (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "text-gold" : "text-stone-400 hover:text-gold"
               }`}
             >
               {link.name}
-              <span className={`absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full ${activeSection === link.id ? 'w-full' : ''}`} />
-            </button>
+              <span className={`absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full ${(location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? 'w-full' : ''}`} />
+            </Link>
           ))}
           <a 
             href="https://wa.me/9647725330777"
@@ -169,14 +171,15 @@ export default function Navbar() {
             <div className="flex flex-col gap-10 items-center w-full max-w-xs">
               {navLinks.map((link) => (
                 <motion.div key={link.id} variants={linkVariants}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
+                  <Link
+                    to={link.path}
+                    onClick={() => link.id === "home" ? scrollToSection("home") : setIsOpen(false)}
                     className={`text-3xl font-serif tracking-[0.2em] uppercase transition-all duration-300 ${
-                      activeSection === link.id ? "text-gold" : "text-stone-500 hover:text-gold"
+                      (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "text-gold" : "text-stone-500 hover:text-gold"
                     }`}
                   >
                     {link.name}
-                  </button>
+                  </Link>
                 </motion.div>
               ))}
               

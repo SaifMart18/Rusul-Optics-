@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import Logo from "../components/Logo";
 import Services from "./Services";
 import Contact from "./Contact";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070" 
-            alt="Clinic Background" 
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=2070" 
+            alt="Luxury Optical Clinic" 
+            className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -58,7 +59,7 @@ export default function Home() {
           </div>
 
           <button 
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-block px-8 md:px-10 py-3 md:py-4 gold-gradient text-black font-bold text-base md:text-lg rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
           >
             استكشف خدماتنا
@@ -69,10 +70,15 @@ export default function Home() {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-gold/50 cursor-pointer"
-          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}
         >
           <ChevronDown size={32} />
         </motion.div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section id="why-choose-us">
+        <WhyChooseUs />
       </section>
 
       {/* Services Section */}

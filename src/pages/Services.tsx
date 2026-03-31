@@ -12,7 +12,7 @@ const services = [
     title: "فحص الحول وتقويم البصر",
     desc: "تشخيص متخصص لحالات الحول وضعف العضلات العينية للأطفال والكبار، مع وضع خطط علاجية وتمارين لتقوية البصر وتحقيق التوازن البصري المثالي.",
     icon: Activity,
-    image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "النظارات الطبية الفاخرة",
@@ -30,7 +30,7 @@ const services = [
     title: "النظارات الشمسية الطبية",
     desc: "اجمع بين الحماية القصوى من الأشعة فوق البنفسجية والأناقة العصرية مع عدسات شمسية مصممة خصيصاً لتناسب قياس نظرك الخاص.",
     icon: Sun,
-    image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "بصريات الأطفال",
