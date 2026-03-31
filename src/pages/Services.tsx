@@ -47,20 +47,30 @@ export default function Services() {
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center md:text-right"
-          >
-            <h1 className="text-gold font-serif text-5xl md:text-8xl mb-8 leading-tight">
+          <div className="text-center md:text-right">
+            <motion.h1 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-gold font-serif text-5xl md:text-8xl mb-8 leading-tight"
+            >
               خدماتنا <span className="italic font-light text-stone-500">الطبية</span>
-            </h1>
-            <p className="text-stone-400 max-w-3xl md:ml-auto text-xl md:text-2xl font-arabic leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-stone-400 max-w-3xl md:ml-auto text-xl md:text-2xl font-arabic leading-relaxed"
+            >
               نجمع بين الخبرة الطبية العميقة وأحدث التقنيات العالمية لنقدم لك رعاية بصرية تليق بك.
-            </p>
-            <div className="w-full h-px bg-gradient-to-l from-gold/40 to-transparent mt-12" />
-          </motion.div>
+            </motion.p>
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
+              className="w-full h-px bg-gradient-to-l from-gold/40 to-transparent mt-12 origin-right" 
+            />
+          </div>
         </div>
       </section>
 
@@ -71,10 +81,14 @@ export default function Services() {
             {services.map((service, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.1,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
                 className="group"
               >
                 <div className="relative h-[300px] mb-8 overflow-hidden rounded-2xl luxury-border">
@@ -112,9 +126,10 @@ export default function Services() {
       <section className="py-32 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative p-12 md:p-20 rounded-[40px] overflow-hidden text-center"
           >
             <div className="absolute inset-0 bg-gold/5 backdrop-blur-sm border border-gold/20" />
