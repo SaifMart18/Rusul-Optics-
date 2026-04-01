@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { ShieldCheck, Star, Zap, Globe, CheckCircle2, Award, Sparkles, Droplets } from "lucide-react";
+import { ShieldCheck, Star, Zap, Globe, CheckCircle2, Award, Sparkles, Droplets, Eye } from "lucide-react";
 
 const brands = [
   {
     title: "جونسون آند جونسون (Acuvue)",
     desc: "تعتبر من الأكثر طلباً عالمياً، وتتميز بتكنولوجيا الراحة الفائقة التي تحاكي الدموع الطبيعية.",
     icon: Globe,
-    country: "الولايات المتحدة",
+    country: "الولايات المتحدة الأمريكية",
     tag: "الأكثر طلباً",
     categories: [
       { name: "للاستخدام اليومي", products: ["Acuvue Oasys 1-Day", "Moist 1-Day", "Oasys Max 1-Day"] },
@@ -18,7 +18,7 @@ const brands = [
     title: "بوش آند لومب (Bausch & Lomb)",
     desc: "ماركة عريقة ومعروفة بجودة الرؤية الفائقة والابتكار المستمر في صحة العين.",
     icon: Award,
-    country: "الولايات المتحدة",
+    country: "الولايات المتحدة الأمريكية",
     tag: "رؤية فائقة",
     categories: [
       { name: "سلسلة Ultra", products: ["Ultra Monthly", "Ultra for Astigmatism", "Ultra Multifocal", "Ultra One Day"] },
@@ -30,7 +30,7 @@ const brands = [
     title: "ألكون (Alcon - Air Optix)",
     desc: "مشهورة بمتانة العدسة ومقاومتها العالية للترسبات، مما يوفر راحة مستمرة طوال فترة اللبس.",
     icon: Sparkles,
-    country: "سويسرا",
+    country: "بريطانيا",
     tag: "راحة مستمرة",
     categories: [
       { name: "Air Optix", products: ["HydraGlyde (Monthly)", "Night & Day", "HydraGlyde for Astigmatism"] },
@@ -41,7 +41,7 @@ const brands = [
     title: "كوبر فيجن (Biofinity)",
     desc: "الخيار المفضل للأخصائيين بسبب جودة المواد العالية التي توفر ليونة استثنائية.",
     icon: Droplets,
-    country: "الولايات المتحدة",
+    country: "الولايات المتحدة الأمريكية",
     tag: "خيار الأخصائيين",
     categories: [
       { name: "Biofinity", products: ["Biofinity Monthly", "Biofinity XR", "Biofinity Toric"] },
@@ -49,10 +49,51 @@ const brands = [
     ]
   },
   {
+    title: "ديزو (Desio)",
+    desc: "عدسات إيطالية سنوية فاخرة تجمع بين التصميم العصري والألوان الساحرة التي تمنح العين مظهراً طبيعياً وجذاباً.",
+    icon: Star,
+    country: "إيطاليا",
+    tag: "سنوية فاخرة",
+    categories: [
+      { name: "النوع", products: ["عدسات سنوية", "ألوان طبيعية"] }
+    ]
+  },
+  {
+    title: "فيتاس (Vitas)",
+    desc: "تكنولوجيا كورية متطورة توفر راحة استثنائية للعين مع مجموعة واسعة من الخيارات الطبية والتجميلية.",
+    icon: Zap,
+    country: "كوريا الجنوبية",
+    tag: "تكنولوجيا كورية",
+    categories: [
+      { name: "النوع", products: ["طبية وتجميلية", "راحة فائقة"] }
+    ]
+  },
+  {
+    title: "إتش دي (HD)",
+    desc: "عدسات فرنسية متخصصة مصممة خصيصاً لتصحيح قصر البصر بدقة عالية ووضوح رؤية فائق.",
+    icon: Eye,
+    country: "فرنسا",
+    tag: "لقصر البصر فقط",
+    categories: [
+      { name: "التخصص", products: ["تصحيح قصر البصر", "وضوح عالي"] }
+    ]
+  },
+  {
+    title: "ولف فجن وفوكس فجن (Wolf & Fox Vision)",
+    desc: "عدسات لاصقة طبية سنوية بامتياز إسباني، توفر حلولاً متكاملة لتصحيح بعد وقصر البصر بدرجات طبية دقيقة.",
+    icon: ShieldCheck,
+    country: "إسبانيا",
+    tag: "امتياز إسباني",
+    categories: [
+      { name: "Wolf Vision", products: ["سنوية طبية", "امتياز إسباني"] },
+      { name: "Fox Vision", products: ["درجات طبية دقيقة", "بعد وقصر البصر"] }
+    ]
+  },
+  {
     title: "العدسات الملونة (Color Lenses)",
     desc: "مجموعة مختارة من أرقى العدسات الملونة التي تجمع بين الجمال الطبيعي والراحة التامة.",
-    icon: Star,
-    country: "ماركات عالمية",
+    icon: Sparkles,
+    country: "بلدان مختلفة",
     tag: "جمال طبيعي",
     categories: [
       { name: "Air Optix Colors", products: ["ألوان طبيعية ومريحة جداً"] },
