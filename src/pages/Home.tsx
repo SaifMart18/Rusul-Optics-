@@ -4,24 +4,20 @@ import { ChevronDown } from "lucide-react";
 import Logo from "../components/Logo";
 import Services from "./Services";
 import Contact from "./Contact";
-import SEO from "../components/SEO";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      <SEO 
-        title="الرئيسية" 
-        description="عيادة بصريات متكاملة - فحص وتقويم البصر، نظارات شمسية وطبية، وعدسات لاصقة طبية وتجميلية."
-      />
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         {/* Background Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2000&auto=format&fit=crop" 
-            alt="Professional Eye Exam" 
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&q=80&w=2070" 
+            alt="Luxury Optical Clinic" 
+            className="w-full h-full object-cover opacity-60"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -63,7 +59,7 @@ export default function Home() {
           </div>
 
           <button 
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-block px-8 md:px-10 py-3 md:py-4 gold-gradient text-black font-bold text-base md:text-lg rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
           >
             استكشف خدماتنا
@@ -74,68 +70,20 @@ export default function Home() {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-gold/50 cursor-pointer"
-          onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' })}
         >
           <ChevronDown size={32} />
         </motion.div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section id="why-choose-us">
+        <WhyChooseUs />
+      </section>
+
       {/* Services Section */}
       <section id="services">
         <Services />
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-32 px-6 bg-zinc-950/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-gold font-serif text-4xl md:text-6xl mb-6"
-            >
-              لماذا تختار بصريات المستقبل؟
-            </motion.h2>
-            <div className="w-24 h-1 gold-gradient mx-auto mb-8" />
-            <p className="text-stone-400 max-w-2xl mx-auto text-lg font-arabic">
-              نحن نلتزم بتقديم أعلى معايير الجودة والدقة في كل خدمة نقدمها، مع التركيز على راحتكم وسلامة عيونكم.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "خبرة طبية متخصصة",
-                desc: "فريق من الخبراء المتخصصين في فحص وتقويم البصر بأحدث الأساليب العلمية.",
-                icon: "🩺"
-              },
-              {
-                title: "أحدث التقنيات",
-                desc: "نستخدم أحدث الأجهزة الرقمية لضمان دقة الفحص وجودة العدسات.",
-                icon: "🔬"
-              },
-              {
-                title: "ماركات عالمية",
-                desc: "نوفر تشكيلة واسعة من أرقى الماركات العالمية للنظارات الطبية والشمسية.",
-                icon: "💎"
-              }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="p-10 rounded-[40px] bg-black/40 border border-gold/10 hover:border-gold/30 transition-all duration-500 text-center group"
-              >
-                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
-                <h3 className="text-gold font-serif text-2xl mb-4">{item.title}</h3>
-                <p className="text-stone-400 font-arabic leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Contact Section */}
