@@ -68,31 +68,36 @@ export default function Navbar() {
     { name: "اتصل بنا", id: "contact", path: "/contact" },
   ];
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
+  const handleNavClick = (link: typeof navLinks[0]) => {
+    setIsOpen(false);
+    
+    // If we are on the home page and the link is an anchor section
+    if (location.pathname === "/" && (link.id === "home" || link.id === "services" || link.id === "contact")) {
+      const element = document.getElementById(link.id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
     }
   };
 
   const menuVariants = {
     closed: {
       opacity: 0,
-      x: "100%",
+      y: "-20px",
       transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.3,
+        ease: "easeInOut",
         staggerChildren: 0.05,
         staggerDirection: -1
       }
     },
     open: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.4,
+        ease: "easeOut",
         staggerChildren: 0.1,
         delayChildren: 0.2
       }
@@ -100,7 +105,7 @@ export default function Navbar() {
   };
 
   const linkVariants = {
-    closed: { opacity: 0, y: 20 },
+    closed: { opacity: 0, y: 10 },
     open: { opacity: 1, y: 0 }
   };
 
@@ -112,8 +117,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
         {/* Logo */}
-        <Link to="/" onClick={() => scrollToSection("home")} className="flex items-center gap-2 sm:gap-3 group shrink-0">
-          <Logo size={window.innerWidth < 640 ? 36 : 48} className="group-hover:scale-110 transition-transform duration-500" />
+        <Link to="/" onClick={() => handleNavClick(navLinks[0])} className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <Logo size={48} className="group-hover:scale-110 transition-transform duration-500 sm:w-12 sm:h-12 w-9 h-9" />
           <span className="font-serif text-base sm:text-xl tracking-widest gold-text-gradient font-bold uppercase truncate max-w-[150px] sm:max-w-none">
             Rusul Optics
           </span>
@@ -125,7 +130,7 @@ export default function Navbar() {
             <Link
               key={link.id}
               to={link.path}
-              onClick={() => link.id === "home" ? scrollToSection("home") : null}
+              onClick={() => handleNavClick(link)}
               className={`text-sm tracking-widest uppercase transition-colors duration-300 relative group ${
                 (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "text-gold" : "text-stone-400 hover:text-gold"
               }`}
@@ -146,7 +151,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-gold z-50 p-2"
+          className="md:hidden text-gold z-50 p-2 relative"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
@@ -162,19 +167,19 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center px-6"
+            className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center px-6 pt-20"
           >
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
-            <div className="flex flex-col gap-10 items-center w-full max-w-xs">
+            <div className="flex flex-col gap-8 items-center w-full max-w-xs overflow-y-auto max-h-[70vh] py-4">
               {navLinks.map((link) => (
                 <motion.div key={link.id} variants={linkVariants}>
                   <Link
                     to={link.path}
-                    onClick={() => link.id === "home" ? scrollToSection("home") : setIsOpen(false)}
-                    className={`text-3xl font-serif tracking-[0.2em] uppercase transition-all duration-300 ${
+                    onClick={() => handleNavClick(link)}
+                    className={`text-2xl font-serif tracking-[0.2em] uppercase transition-all duration-300 ${
                       (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "text-gold" : "text-stone-500 hover:text-gold"
                     }`}
                   >
@@ -183,18 +188,18 @@ export default function Navbar() {
                 </motion.div>
               ))}
               
-              <motion.div variants={linkVariants} className="w-full pt-6">
+              <motion.div variants={linkVariants} className="w-full pt-4">
                 <a 
                   href="https://wa.me/9647725330777"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-5 gold-gradient text-black font-bold rounded-full text-lg tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+                  className="block w-full text-center py-4 gold-gradient text-black font-bold rounded-full text-lg tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.2)]"
                 >
                   احجز الآن
                 </a>
               </motion.div>
 
-              <motion.div variants={linkVariants} className="flex gap-6 mt-8">
+              <motion.div variants={linkVariants} className="flex gap-6 mt-4">
                 <a 
                   href="https://www.instagram.com/rusul.optic?igsh=MXRoa201MjNteWxrdQ=="
                   target="_blank"
@@ -217,5 +222,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+
   );
 }
