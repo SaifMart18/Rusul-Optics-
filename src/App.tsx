@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import ContactLenses from "./pages/ContactLenses";
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -29,6 +30,9 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact-lenses" element={<ContactLenses />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
