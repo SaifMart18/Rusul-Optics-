@@ -3,37 +3,63 @@ import { ShieldCheck, Star, Zap, Globe, CheckCircle2, Award, Sparkles, Droplets 
 
 const brands = [
   {
-    title: "الماركة الفرنسية",
-    desc: "تجسد الأناقة الفرنسية مع دقة بصرية متناهية، مصممة لتوفير رؤية كريستالية وراحة تدوم طوال اليوم.",
+    title: "جونسون آند جونسون (Acuvue)",
+    desc: "تعتبر من الأكثر طلباً عالمياً، وتتميز بتكنولوجيا الراحة الفائقة التي تحاكي الدموع الطبيعية.",
     icon: Globe,
-    country: "فرنسا",
-    tag: "الأكثر مبيعاً",
-    features: ["تقنية الترطيب الذاتي", "حماية 100% من الأشعة", "تصميم رقيق جداً"]
+    country: "الولايات المتحدة",
+    tag: "الأكثر طلباً",
+    categories: [
+      { name: "للاستخدام اليومي", products: ["Acuvue Oasys 1-Day", "Moist 1-Day", "Oasys Max 1-Day"] },
+      { name: "أسبوعي / شهري", products: ["Acuvue Oasys"] },
+      { name: "حالات خاصة", products: ["Oasys for Astigmatism", "Oasys Multifocal"] }
+    ]
   },
   {
-    title: "الماركة الإنجليزية",
-    desc: "جودة بريطانية عريقة تعتمد على أحدث الأبحاث العلمية لتوفير عدسات صحية وآمنة تماماً للعين الحساسة.",
+    title: "بوش آند لومب (Bausch & Lomb)",
+    desc: "ماركة عريقة ومعروفة بجودة الرؤية الفائقة والابتكار المستمر في صحة العين.",
     icon: Award,
-    country: "بريطانيا",
-    tag: "جودة ملكية",
-    features: ["نفاذية أكسجين فائقة", "مقاومة للرواسب البروتينية", "ثبات عالي في العين"]
+    country: "الولايات المتحدة",
+    tag: "رؤية فائقة",
+    categories: [
+      { name: "سلسلة Ultra", products: ["Ultra Monthly", "Ultra for Astigmatism", "Ultra Multifocal", "Ultra One Day"] },
+      { name: "سلسلة PureVision", products: ["PureVision 2HD", "PureVision 2HD for Multifocal"] },
+      { name: "أخرى", products: ["SofLens 59"] }
+    ]
   },
   {
-    title: "الماركة الكورية",
-    desc: "ثورة في عالم العدسات اللاصقة تجمع بين التكنولوجيا الكورية المتطورة والألوان الطبيعية الساحرة.",
+    title: "ألكون (Alcon - Air Optix)",
+    desc: "مشهورة بمتانة العدسة ومقاومتها العالية للترسبات، مما يوفر راحة مستمرة طوال فترة اللبس.",
     icon: Sparkles,
-    country: "كوريا",
-    tag: "تكنولوجيا متطورة",
-    features: ["ألوان طبيعية جذابة", "عدسات مرنة ومريحة", "مناسبة للاستخدام الطويل"]
+    country: "سويسرا",
+    tag: "راحة مستمرة",
+    categories: [
+      { name: "Air Optix", products: ["HydraGlyde (Monthly)", "Night & Day", "HydraGlyde for Astigmatism"] },
+      { name: "Dailies", products: ["Total 1", "Precision 1", "Aqua Comfort"] }
+    ]
   },
   {
-    title: "الماركة الإسبانية",
-    desc: "عدسات إسبانية فاخرة تضمن لك حماية قصوى وراحة مثالية، مثالية لمن يعانون من جفاف العين المستمر.",
+    title: "كوبر فيجن (Biofinity)",
+    desc: "الخيار المفضل للأخصائيين بسبب جودة المواد العالية التي توفر ليونة استثنائية.",
     icon: Droplets,
-    country: "إسبانيا",
-    tag: "حماية قصوى",
-    features: ["تقنية حبس الرطوبة", "سطح ناعم يقلل الاحتكاك", "رؤية ليلية واضحة"]
+    country: "الولايات المتحدة",
+    tag: "خيار الأخصائيين",
+    categories: [
+      { name: "Biofinity", products: ["Biofinity Monthly", "Biofinity XR", "Biofinity Toric"] },
+      { name: "أخرى", products: ["MyDay (1 Day)", "Biomedix 55", "Proclear Monthly"] }
+    ]
   },
+  {
+    title: "العدسات الملونة (Color Lenses)",
+    desc: "مجموعة مختارة من أرقى العدسات الملونة التي تجمع بين الجمال الطبيعي والراحة التامة.",
+    icon: Star,
+    country: "ماركات عالمية",
+    tag: "جمال طبيعي",
+    categories: [
+      { name: "Air Optix Colors", products: ["ألوان طبيعية ومريحة جداً"] },
+      { name: "Lacelle", products: ["مظهر جذاب (زينة أو نظر)"] },
+      { name: "AQ Colors", products: ["متوفرة للزينة أو للنظر"] }
+    ]
+  }
 ];
 
 export default function ContactLensesSection() {
@@ -54,7 +80,7 @@ export default function ContactLensesSection() {
             className="flex items-center justify-center gap-3 mb-6"
           >
             <span className="h-px w-8 bg-gold/50" />
-            <span className="text-gold uppercase tracking-[0.4em] text-xs font-serif">World Class Brands</span>
+            <span className="text-gold uppercase tracking-[0.4em] text-xs font-serif">Premium Contact Lenses</span>
             <span className="h-px w-8 bg-gold/50" />
           </motion.div>
           
@@ -80,7 +106,7 @@ export default function ContactLensesSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {brands.map((brand, index) => (
             <motion.div
               key={index}
@@ -88,42 +114,51 @@ export default function ContactLensesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.1 }}
-              className="group relative p-10 rounded-[2.5rem] bg-stone-900/20 border border-gold/10 hover:border-gold/30 transition-all duration-500 hover:bg-stone-900/40"
+              className="group relative p-8 md:p-12 rounded-[3rem] bg-stone-900/20 border border-gold/10 hover:border-gold/30 transition-all duration-500 hover:bg-stone-900/40"
             >
-              <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-                <div className="flex-1 text-right order-2 md:order-1">
-                  <div className="flex items-center justify-end gap-3 mb-3">
-                    <span className="text-gold/40 text-[10px] font-serif tracking-[0.2em] uppercase">{brand.country}</span>
-                    <div className="w-8 h-px bg-gold/20" />
-                  </div>
-                  
-                  <h3 className="text-white font-serif text-3xl mb-4 group-hover:text-gold transition-colors duration-300">
-                    {brand.title}
-                  </h3>
-                  
-                  <p className="text-stone-400 font-arabic text-base leading-relaxed mb-8">
-                    {brand.desc}
-                  </p>
-
-                  <div className="space-y-3">
-                    {brand.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-center justify-end gap-3">
-                        <span className="text-stone-300 font-arabic text-sm">{feature}</span>
-                        <CheckCircle2 className="text-gold/60 w-4 h-4" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="order-1 md:order-2">
-                  <div className="w-20 h-20 rounded-3xl bg-gold/5 flex items-center justify-center text-gold border border-gold/10 group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500 shadow-[0_0_30px_rgba(212,175,55,0.05)]">
-                    <brand.icon size={40} strokeWidth={1} />
-                  </div>
-                  <div className="mt-4 flex justify-center">
-                    <span className="px-3 py-1 rounded-full bg-gold/5 border border-gold/10 text-gold/60 text-[9px] uppercase tracking-widest font-serif whitespace-nowrap">
+              <div className="flex flex-col gap-8">
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col items-start gap-4">
+                    <div className="w-16 h-16 rounded-2xl bg-gold/5 flex items-center justify-center text-gold border border-gold/10 group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500">
+                      <brand.icon size={32} strokeWidth={1} />
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-gold/5 border border-gold/10 text-gold/60 text-[10px] uppercase tracking-widest font-serif">
                       {brand.tag}
                     </span>
                   </div>
+                  <div className="text-right">
+                    <div className="flex items-center justify-end gap-3 mb-2">
+                      <span className="text-gold/40 text-[10px] font-serif tracking-[0.2em] uppercase">{brand.country}</span>
+                      <div className="w-8 h-px bg-gold/20" />
+                    </div>
+                    <h3 className="text-white font-serif text-3xl mb-2 group-hover:text-gold transition-colors duration-300">
+                      {brand.title}
+                    </h3>
+                  </div>
+                </div>
+                
+                <p className="text-stone-400 font-arabic text-base leading-relaxed text-right">
+                  {brand.desc}
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                  {brand.categories.map((cat, cIndex) => (
+                    <div key={cIndex} className="space-y-3 text-right">
+                      <h4 className="text-gold/80 font-serif text-sm border-b border-gold/10 pb-2 mb-3 italic">
+                        {cat.name}
+                      </h4>
+                      <div className="flex flex-wrap justify-end gap-2">
+                        {cat.products.map((prod, pIndex) => (
+                          <span 
+                            key={pIndex}
+                            className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-stone-300 font-arabic text-xs hover:border-gold/30 hover:text-white transition-all duration-300"
+                          >
+                            {prod}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>

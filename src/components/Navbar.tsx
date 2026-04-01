@@ -151,11 +151,24 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-gold z-50 p-2 relative"
+          className="md:hidden text-gold z-50 p-2 relative w-10 h-10 flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          <div className="flex flex-col gap-1.5 w-6 items-end">
+            <motion.span 
+              animate={isOpen ? { rotate: 45, y: 8, width: "100%" } : { rotate: 0, y: 0, width: "100%" }}
+              className="h-0.5 bg-gold block rounded-full origin-center transition-all duration-300"
+            />
+            <motion.span 
+              animate={isOpen ? { opacity: 0, x: 10 } : { opacity: 1, x: 0, width: "70%" }}
+              className="h-0.5 bg-gold block rounded-full transition-all duration-300"
+            />
+            <motion.span 
+              animate={isOpen ? { rotate: -45, y: -8, width: "100%" } : { rotate: 0, y: 0, width: "100%" }}
+              className="h-0.5 bg-gold block rounded-full origin-center transition-all duration-300"
+            />
+          </div>
         </button>
       </div>
 
@@ -163,61 +176,72 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center px-6 pt-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center px-6"
           >
             {/* Background Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
-            <div className="flex flex-col gap-8 items-center w-full max-w-xs overflow-y-auto max-h-[70vh] py-4">
+            <motion.div 
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="flex flex-col gap-10 items-center w-full max-w-xs relative z-10"
+            >
               {navLinks.map((link) => (
                 <motion.div key={link.id} variants={linkVariants}>
                   <Link
                     to={link.path}
                     onClick={() => handleNavClick(link)}
-                    className={`text-2xl font-serif tracking-[0.2em] uppercase transition-all duration-300 ${
+                    className={`text-3xl font-serif tracking-[0.2em] uppercase transition-all duration-300 relative group ${
                       (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "text-gold" : "text-stone-500 hover:text-gold"
                     }`}
                   >
                     {link.name}
+                    <motion.span 
+                      initial={{ width: 0 }}
+                      animate={{ width: (location.pathname === link.path || (link.id === "home" && location.pathname === "/")) ? "100%" : 0 }}
+                      className="absolute -bottom-2 left-0 h-px bg-gold/50"
+                    />
                   </Link>
                 </motion.div>
               ))}
               
-              <motion.div variants={linkVariants} className="w-full pt-4">
+              <motion.div variants={linkVariants} className="w-full pt-6">
                 <a 
                   href="https://wa.me/9647725330777"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 gold-gradient text-black font-bold rounded-full text-lg tracking-widest uppercase shadow-[0_0_30px_rgba(212,175,55,0.2)]"
+                  className="block w-full text-center py-5 gold-gradient text-black font-bold rounded-2xl text-xl tracking-widest uppercase shadow-[0_10px_40px_rgba(212,175,55,0.2)] active:scale-95 transition-transform"
                 >
                   احجز الآن
                 </a>
               </motion.div>
 
-              <motion.div variants={linkVariants} className="flex gap-6 mt-4">
+              <motion.div variants={linkVariants} className="flex gap-8 mt-6">
                 <a 
                   href="https://www.instagram.com/rusul.optic?igsh=MXRoa201MjNteWxrdQ=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold transition-all"
+                  className="w-14 h-14 rounded-2xl bg-white/5 border border-gold/10 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold transition-all hover:bg-gold/5"
                 >
-                  <Instagram size={20} />
+                  <Instagram size={24} />
                 </a>
                 <a 
                   href="https://www.tiktok.com/@rusuloptics?_r=1&_t=ZS-94vcCRCVS54"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold transition-all"
+                  className="w-14 h-14 rounded-2xl bg-white/5 border border-gold/10 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold transition-all hover:bg-gold/5"
                 >
-                  <TikTokIcon size={20} />
+                  <TikTokIcon size={24} />
                 </a>
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
