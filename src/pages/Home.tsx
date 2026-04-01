@@ -5,6 +5,7 @@ import Logo from "../components/Logo";
 import Services from "./Services";
 import Contact from "./Contact";
 import WhyChooseUs from "../components/WhyChooseUs";
+import ContactLensesSection from "../components/ContactLensesSection";
 
 export default function Home() {
   return (
@@ -53,9 +54,8 @@ export default function Home() {
             عيادة بصريات متكاملة
           </p>
           <div className="flex flex-col gap-1 md:gap-2 text-stone-300 font-arabic text-base sm:text-lg md:text-xl mb-10 md:mb-12">
-            <p>فحص وتقويم البصر • نظارات شمسية طبية</p>
-            <p>نظارات طبية • عدسات لاصقة طبية وتجميلية</p>
-            <p>فحص الحول • خدمات متكاملة تخص العيون</p>
+            <p>صنع النظارات الطبية بدرجات طبية • نظارات شمسية • فحص الحول</p>
+            <p>عدسات لاصقة طبية وتجميلية • خدمات متكاملة تخص العيون</p>
           </div>
 
           <button 
@@ -79,6 +79,11 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section id="why-choose-us">
         <WhyChooseUs />
+      </section>
+
+      {/* Contact Lenses Section */}
+      <section id="contact-lenses">
+        <ContactLensesSection />
       </section>
 
       {/* Services Section */}

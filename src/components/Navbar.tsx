@@ -31,7 +31,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ["home", "services", "contact"];
+      const sections = ["home", "services", "contact-lenses", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -72,7 +72,7 @@ export default function Navbar() {
     setIsOpen(false);
     
     // If we are on the home page and the link is an anchor section
-    if (location.pathname === "/" && (link.id === "home" || link.id === "services" || link.id === "contact")) {
+    if (location.pathname === "/" && (link.id === "home" || link.id === "services" || link.id === "contact-lenses" || link.id === "contact")) {
       const element = document.getElementById(link.id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });

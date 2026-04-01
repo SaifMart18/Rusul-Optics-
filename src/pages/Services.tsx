@@ -36,7 +36,7 @@ const services = [
     title: "بصريات الأطفال",
     desc: "بيئة مريحة ومحببة للأطفال لإجراء فحوصات بصرية دقيقة تضمن نمواً بصرياً سليماً في مراحلهم العمرية الأولى بأسلوب هادئ وممتع.",
     icon: Baby,
-    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
