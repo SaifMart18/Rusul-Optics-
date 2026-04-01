@@ -81,14 +81,14 @@ export default function Home() {
         <WhyChooseUs />
       </section>
 
-      {/* Contact Lenses Section */}
-      <section id="contact-lenses">
-        <ContactLensesSection />
-      </section>
-
       {/* Services Section */}
       <section id="services">
         <Services />
+      </section>
+
+      {/* Contact Lenses Section */}
+      <section id="contact-lenses">
+        <ContactLensesSection />
       </section>
 
       {/* Contact Section */}
