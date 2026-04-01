@@ -51,7 +51,7 @@ export default function Footer() {
               <Phone size={16} className="text-gold" />
             </div>
             <div className="flex items-center gap-3">
-              <span>بغداد، العراق</span>
+              <span>بغداد، المنصور - شارع مزاد ازهور</span>
               <MapPin size={16} className="text-gold" />
             </div>
             <div className="flex gap-4 mt-4">

@@ -22,7 +22,7 @@ export default function Contact() {
     <div className="pt-32 pb-20 px-6 min-h-screen">
       <SEO 
         title="اتصل بنا" 
-        description="تواصل مع بصريات المستقبل في بغداد، حي الجامعة. نحن هنا لخدمتكم والإجابة على استفساراتكم."
+        description="تواصل مع بصريات رسل في بغداد، المنصور. نحن هنا لخدمتكم والإجابة على استفساراتكم."
       />
       <div className="max-w-7xl mx-auto">
         <motion.div 
@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-gold font-serif text-xl mb-2 uppercase tracking-widest">الموقع</h4>
-                  <p className="text-stone-300 text-lg font-arabic">بغداد - حي الجامعة - شارع الربيع</p>
+                  <p className="text-stone-300 text-lg font-arabic">بغداد - المنصور - شارع مزاد ازهور</p>
                 </div>
               </div>
             </motion.div>
@@ -151,11 +151,11 @@ export default function Contact() {
             <div className="absolute bottom-6 left-6 right-6 z-10">
               <div className="bg-black/80 backdrop-blur-md border border-gold/20 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="text-right">
-                  <h4 className="text-gold font-serif text-lg uppercase tracking-widest mb-1">موقعنا في حي الجامعة</h4>
-                  <p className="text-stone-400 text-sm font-arabic">شارع الربيع - مقابل مجمع الكوخ</p>
+                  <h4 className="text-gold font-serif text-lg uppercase tracking-widest mb-1">موقعنا في المنصور</h4>
+                  <p className="text-stone-400 text-sm font-arabic">شارع مزاد ازهور</p>
                 </div>
                 <a 
-                  href="https://maps.app.goo.gl/3F8vyMNF6NpEoCGEA"
+                  href="https://maps.app.goo.gl/VgTj47aZncbeberXA?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3 gold-gradient text-black font-bold rounded-xl text-sm transition-all hover:scale-105 whitespace-nowrap"
